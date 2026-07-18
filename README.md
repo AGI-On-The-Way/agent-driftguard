@@ -2,6 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-167a5b.svg)](LICENSE)
 
+[Watch the 2:22 demo video](https://youtu.be/oUA32nraAc8)
+
 **A flight recorder and rollback gate for agent self-improvement.**
 
 Agent DriftGuard prevents an agent from turning weak feedback into permanent
