@@ -1,0 +1,558 @@
+{
+  "artifacts": {
+    "baseline_outputs": "artifacts/deepseek-holdout-run/baseline-outputs.jsonl",
+    "candidate_outputs": "artifacts/deepseek-holdout-run/candidate-outputs.jsonl",
+    "comparison_ledger": "artifacts/deepseek-holdout-run/comparison-ledger.jsonl",
+    "control_outputs": "artifacts/deepseek-holdout-run/control-outputs.jsonl",
+    "dashboard_data": "artifacts/deepseek-holdout-run/dashboard-data.js",
+    "decision": "artifacts/deepseek-holdout-run/decision.md",
+    "experiment_log": "artifacts/deepseek-holdout-run/experiment-log.jsonl",
+    "ledger": "artifacts/deepseek-holdout-run/ledger.jsonl",
+    "proposal_log": "artifacts/deepseek-holdout-run/proposal-log.jsonl",
+    "report": "artifacts/deepseek-holdout-run/drift-report.json"
+  },
+  "comparison": {
+    "candidate_metric": {
+      "hit_rate": 0.938,
+      "hits": 30,
+      "n": 32
+    },
+    "control_metric": {
+      "hit_rate": 0.0,
+      "hits": 0,
+      "n": 32
+    },
+    "control_outputs_hash": "6d04a00b87163b3de2e22f09570cb2f35023bdd53de097ea4ef10e4bb6a4f2da",
+    "effect_baseline_phase": "control",
+    "evalset_hash": "cec9cdf7a41e1abbdedaefe58fd0c004cc84276a6ccfdc615f1c93fed6ed0cc1",
+    "measured_order_counts": {
+      "candidate_first": 16,
+      "control_first": 16
+    },
+    "mode": "interleaved_control",
+    "records_registered": 72,
+    "records_resolved": 72,
+    "schedule": [
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-triage-04"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-release-05"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-normalize-08"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-release-01"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-triage-07"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-anchor-04"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-release-03"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-triage-06"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-triage-01"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-triage-16"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-anchor-02"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-normalize-01"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-triage-09"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-triage-10"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-triage-02"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-normalize-03"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-anchor-01"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-anchor-03"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-normalize-02"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-triage-15"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-release-07"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-release-02"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-release-06"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-triage-03"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-triage-11"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-normalize-05"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-triage-05"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-normalize-07"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-triage-13"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-release-08"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-normalize-06"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-release-04"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-triage-14"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-triage-12"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "holdout-triage-08"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "holdout-normalize-04"
+      }
+    ],
+    "schedule_hash": "181fa8c09a1b2c520029188636cc43d39e04f16b619f6d98681eb153c9353b9c",
+    "scope": "holdout"
+  },
+  "decision": {
+    "action": "keep_change",
+    "reasons": [
+      "locked prediction verified: expected +0.30, actual +0.94",
+      "lesson gate produced no lesson because sample/confidence threshold was not met",
+      "paired increment verified: n=32, delta=+0.938, p=9.313e-10"
+    ],
+    "restored_config": null
+  },
+  "drift": {
+    "anchor_n": 0,
+    "overall_n": 0,
+    "status": "insufficient_data"
+  },
+  "effect_gate": {
+    "actual_delta": 0.9375,
+    "alpha": 0.05,
+    "confidence_interval": {
+      "confidence": 0.95,
+      "lower": 0.8438,
+      "method": "deterministic_paired_bootstrap",
+      "samples": 2000,
+      "upper": 1.0
+    },
+    "critical_regressions": [],
+    "exact_p_value": 9.313225746154785e-10,
+    "improvements": 30,
+    "minimum_absolute_delta": 0.05,
+    "minimum_samples": 20,
+    "paired_n": 32,
+    "passed": true,
+    "reasons": [
+      "paired increment verified: n=32, delta=+0.938, p=9.313e-10"
+    ],
+    "regressions": 0,
+    "task_match": true
+  },
+  "experiment": {
+    "anchor_kind": "anchor_task",
+    "baseline_config_hash": "3e85469fb73962fd82b739862149c3cc045d0a987d2a54085268db356059fe44",
+    "baseline_evalset_hash": "25e4c63cb65d22b2f1810eaa4e34b66d0a3ae3ea75e71381e715ab661d0c1211",
+    "baseline_outputs_hash": "4434ef0d96b9a85be239ee6b170c41628106585c3408f6e8e1fa4a93a9d17b3c",
+    "baseline_run_ids": [
+      "baseline-dev-triage-01",
+      "baseline-dev-triage-02",
+      "baseline-dev-triage-03",
+      "baseline-dev-triage-04",
+      "baseline-dev-triage-05",
+      "baseline-dev-triage-06",
+      "baseline-dev-triage-07",
+      "baseline-dev-triage-08",
+      "baseline-dev-triage-09",
+      "baseline-dev-triage-10",
+      "baseline-dev-triage-11",
+      "baseline-dev-triage-12",
+      "baseline-dev-normalize-01",
+      "baseline-dev-normalize-02",
+      "baseline-dev-normalize-03",
+      "baseline-dev-normalize-04",
+      "baseline-dev-normalize-05",
+      "baseline-dev-normalize-06",
+      "baseline-dev-release-01",
+      "baseline-dev-release-02",
+      "baseline-dev-release-03",
+      "baseline-dev-release-04",
+      "baseline-dev-release-05",
+      "baseline-dev-release-06",
+      "baseline-dev-anchor-01",
+      "baseline-dev-anchor-02"
+    ],
+    "baseline_task_count": 26,
+    "candidate_config_hash": "e14b2838446d163c1c7a348805901456a86a4e9bccdbfff1a4d5914158166901",
+    "candidate_outputs_hash": "e923dacb0212f036332e27ced1c385bc8e2c9ca12ec54b2e5de0c8b58e98d6a8",
+    "candidate_run_ids": [
+      "candidate-holdout-triage-01",
+      "candidate-holdout-triage-02",
+      "candidate-holdout-triage-03",
+      "candidate-holdout-triage-04",
+      "candidate-holdout-triage-05",
+      "candidate-holdout-triage-06",
+      "candidate-holdout-triage-07",
+      "candidate-holdout-triage-08",
+      "candidate-holdout-triage-09",
+      "candidate-holdout-triage-10",
+      "candidate-holdout-triage-11",
+      "candidate-holdout-triage-12",
+      "candidate-holdout-triage-13",
+      "candidate-holdout-triage-14",
+      "candidate-holdout-triage-15",
+      "candidate-holdout-triage-16",
+      "candidate-holdout-normalize-01",
+      "candidate-holdout-normalize-02",
+      "candidate-holdout-normalize-03",
+      "candidate-holdout-normalize-04",
+      "candidate-holdout-normalize-05",
+      "candidate-holdout-normalize-06",
+      "candidate-holdout-normalize-07",
+      "candidate-holdout-normalize-08",
+      "candidate-holdout-release-01",
+      "candidate-holdout-release-02",
+      "candidate-holdout-release-03",
+      "candidate-holdout-release-04",
+      "candidate-holdout-release-05",
+      "candidate-holdout-release-06",
+      "candidate-holdout-release-07",
+      "candidate-holdout-release-08",
+      "candidate-holdout-anchor-01",
+      "candidate-holdout-anchor-02",
+      "candidate-holdout-anchor-03",
+      "candidate-holdout-anchor-04"
+    ],
+    "comparison_mode": "interleaved_control",
+    "comparison_schedule_hash": "181fa8c09a1b2c520029188636cc43d39e04f16b619f6d98681eb153c9353b9c",
+    "config_adapter": "json-file-config",
+    "confirmation_evalset_hash": "cec9cdf7a41e1abbdedaefe58fd0c004cc84276a6ccfdc615f1c93fed6ed0cc1",
+    "confirmation_task_count": 36,
+    "control_outputs_hash": "6d04a00b87163b3de2e22f09570cb2f35023bdd53de097ea4ef10e4bb6a4f2da",
+    "derived_report_refreshes": [
+      {
+        "model_outputs_rerun": false,
+        "reason": "preserve nonzero exact p-value below six decimal places",
+        "source": "comparison_ledger"
+      },
+      {
+        "model_outputs_rerun": false,
+        "reason": "scope holdout health to contemporaneous control and candidate",
+        "source": "holdout_outputs"
+      },
+      {
+        "model_outputs_rerun": false,
+        "reason": "label development and holdout lifecycle scopes explicitly",
+        "source": "locked_manifest_and_experiment_log"
+      }
+    ],
+    "evalset_hash": "25e4c63cb65d22b2f1810eaa4e34b66d0a3ae3ea75e71381e715ab661d0c1211",
+    "evidence_level": "orchestrated_holdout",
+    "holdout_mode": true,
+    "limitations": [
+      "one disjoint holdout does not establish production generalization or remove service drift"
+    ],
+    "manifest_hash": "8483da5c00bedc155e87e7f6c6d65bf456f249354331afd27d242c07379d6225",
+    "metric_kind": "agent_task",
+    "order": [
+      "development_baseline",
+      "proposal_locked",
+      "config_applied",
+      "holdout_control_candidate",
+      "verification"
+    ],
+    "runner": "command-agent-runner",
+    "scenario": "deepseek-operations-policy-holdout-v1",
+    "task_id_overlap": []
+  },
+  "health": {
+    "healthy": true,
+    "recommend_rollback": false,
+    "scope": "holdout_control_candidate",
+    "signals": [
+      {
+        "degraded": false,
+        "delta": 0.938,
+        "name": "hit_rate",
+        "prior": 0.0,
+        "recent": 0.938
+      },
+      {
+        "degraded": false,
+        "name": "pending_ratio",
+        "value": 0.0
+      }
+    ]
+  },
+  "integrity": {
+    "comparison_ledger": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 144,
+      "head": "3b17c75101857fe908c0755fb2109e83606ee181da6367e6ca22c177ba29fac6",
+      "valid": true
+    },
+    "experiment_log": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 12,
+      "head": "657b4408daa380106b0faf6e371ff1f003ad74a7e12290c6ceedac03ebad1eea",
+      "valid": true
+    },
+    "ledger": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 124,
+      "head": "b9de9adbf723f5141afc46fe17339e0e7d1361b4fe4089380cf23b1f79e3095e",
+      "valid": true
+    },
+    "proposal_log": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 3,
+      "head": "53c18c9d7cf1f8350c181e1e494272e37c6f6e64086dcc3b9b05414be3aabf6c",
+      "valid": true
+    }
+  },
+  "lessons": {
+    "distilled": [],
+    "gate": "blocked_below_min_samples_or_confidence",
+    "minimum_confidence": 0.6,
+    "minimum_samples": 8
+  },
+  "metrics": {
+    "agent_brier": null,
+    "agent_hit_rate": {
+      "hit_rate": 0.536,
+      "hits": 30,
+      "miss_attribution": {
+        "boundary_rule_failed": 2,
+        "normalization_policy_failed": 6,
+        "priority_rule_failed": 4,
+        "release_policy_failed": 5,
+        "wrong_policy_queue": 9
+      },
+      "n": 56
+    },
+    "agent_reliability": [],
+    "anchor_brier": null,
+    "baseline_hit_rate": {
+      "hit_rate": 0.0,
+      "hits": 0,
+      "n": 24
+    },
+    "candidate_hit_rate": {
+      "hit_rate": 0.938,
+      "hits": 30,
+      "n": 32
+    },
+    "overall_brier": null
+  },
+  "policy_execution": {
+    "action": "keep_candidate",
+    "learning_action": "pause_lesson_injection",
+    "receipt": {
+      "action": "keep",
+      "adapter": "json-file-config",
+      "after_hash": "e14b2838446d163c1c7a348805901456a86a4e9bccdbfff1a4d5914158166901",
+      "ts": 1784362317.6549451
+    }
+  },
+  "proposal_verification": {
+    "actual_delta": 0.938,
+    "baseline": 0.0,
+    "current_value": 0.938,
+    "predicted_delta": 0.3,
+    "prev_config": null,
+    "status": "verified"
+  },
+  "sample_gate": {
+    "baseline_n": 24,
+    "candidate_n": 32,
+    "minimum_per_phase": 20,
+    "passed": true
+  },
+  "summary": {
+    "decision": "keep_change",
+    "records_registered": 62,
+    "records_resolved": 62,
+    "scenario": "deepseek-operations-policy-holdout-v1"
+  }
+}

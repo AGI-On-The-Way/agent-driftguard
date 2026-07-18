@@ -1,0 +1,13 @@
+{
+  "id": "orchestrated-agent-policy-v1",
+  "description": "Use operation-specific handling instead of the permissive baseline mode.",
+  "metric": "agent_task_hit_rate",
+  "baseline": 0.4,
+  "predicted_delta": 0.4,
+  "change": {
+    "mode": "candidate"
+  },
+  "previous_config": {
+    "mode": "baseline"
+  }
+}

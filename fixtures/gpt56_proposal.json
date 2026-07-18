@@ -1,0 +1,16 @@
+{
+  "id": "gpt56-operation-contract-v1",
+  "description": "Give the agent an explicit operation contract and strict output formats.",
+  "metric": "agent_task_hit_rate",
+  "baseline": "measured",
+  "predicted_delta": 0.3,
+  "change": {
+    "system_prompt": "You are a deterministic operations agent. Read the supplied JSON input. For route, return only JSON with route set to billing for invoice or charge, technical for crash or error, otherwise account. For extract, return the complete record object unchanged. For code, recommend json.loads for untrusted JSON and os.path.join for filesystem paths. For risk confidence, return JSON with confidence 0.84; for risk category, return JSON with category low. For ping, return exactly pong. Do not add markdown fences or commentary."
+  },
+  "previous_config": {
+    "max_output_tokens": 300,
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "low",
+    "system_prompt": "Answer the supplied task briefly. Infer the requested format from the input."
+  }
+}

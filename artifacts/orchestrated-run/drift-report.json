@@ -1,0 +1,443 @@
+{
+  "artifacts": {
+    "baseline_outputs": "artifacts/orchestrated-run/baseline-outputs.jsonl",
+    "candidate_outputs": "artifacts/orchestrated-run/candidate-outputs.jsonl",
+    "comparison_ledger": "artifacts/orchestrated-run/comparison-ledger.jsonl",
+    "control_outputs": "artifacts/orchestrated-run/control-outputs.jsonl",
+    "dashboard_data": "artifacts/orchestrated-run/dashboard-data.js",
+    "decision": "artifacts/orchestrated-run/decision.md",
+    "experiment_log": "artifacts/orchestrated-run/experiment-log.jsonl",
+    "ledger": "artifacts/orchestrated-run/ledger.jsonl",
+    "proposal_log": "artifacts/orchestrated-run/proposal-log.jsonl",
+    "report": "artifacts/orchestrated-run/drift-report.json"
+  },
+  "comparison": {
+    "candidate_metric": {
+      "hit_rate": 1.0,
+      "hits": 20,
+      "n": 20
+    },
+    "control_metric": {
+      "hit_rate": 0.4,
+      "hits": 8,
+      "n": 20
+    },
+    "control_outputs_hash": "e0bf6f10d8e46d7cae942e0b8793bd594070f77cca3af58fcfa3d47766b0e480",
+    "effect_baseline_phase": "control",
+    "measured_order_counts": {
+      "candidate_first": 10,
+      "control_first": 10
+    },
+    "mode": "interleaved_control",
+    "records_registered": 44,
+    "records_resolved": 44,
+    "schedule": [
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "route-account"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "risk-confidence"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "extract-name"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "extract-amount-repeat"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "code-json"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "route-technical"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "extract-risk-repeat"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "extract-risk"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "route-billing-repeat"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "route-account-repeat"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "extract-name-repeat"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "risk-category-repeat"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "route-technical-repeat"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "code-json-repeat"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "route-billing"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "risk-category"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "risk-confidence-repeat"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "anchor-ping-2"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "code-path"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "anchor-ping-1"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "extract-amount"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "code-path-repeat"
+      }
+    ],
+    "schedule_hash": "a763bbee6442faad060a84a97fc6393ab7f203b371a619e64cbae3d5bdfbe2b9"
+  },
+  "decision": {
+    "action": "keep_change",
+    "reasons": [
+      "locked prediction verified: expected +0.40, actual +0.60",
+      "lesson gate produced no lesson because sample/confidence threshold was not met",
+      "paired increment verified: n=20, delta=+0.600, p=0.000244"
+    ],
+    "restored_config": null
+  },
+  "drift": {
+    "anchor_brier": 0.04,
+    "detail": "Overall Brier 0.2036 is 0.164 worse than the anchor (0.04), above the 0.05 tolerance; the learned-feedback channel may be decaying",
+    "gap": 0.1636,
+    "overall_brier": 0.2036,
+    "recommend": "pause_lesson_injection",
+    "status": "llm_judgment_may_be_decaying"
+  },
+  "effect_gate": {
+    "actual_delta": 0.6,
+    "alpha": 0.05,
+    "confidence_interval": {
+      "confidence": 0.95,
+      "lower": 0.4,
+      "method": "deterministic_paired_bootstrap",
+      "samples": 2000,
+      "upper": 0.8
+    },
+    "critical_regressions": [],
+    "exact_p_value": 0.000244,
+    "improvements": 12,
+    "minimum_absolute_delta": 0.05,
+    "minimum_samples": 20,
+    "paired_n": 20,
+    "passed": true,
+    "reasons": [
+      "paired increment verified: n=20, delta=+0.600, p=0.000244"
+    ],
+    "regressions": 0,
+    "task_match": true
+  },
+  "experiment": {
+    "anchor_kind": "anchor_task",
+    "baseline_config_hash": "d8c9624c576d8af77e38158d2caddd12815b84e82f4810db6db8369717eec484",
+    "baseline_outputs_hash": "d3faabf7bde38793652f90e47738d39c7d467682c4f89f667a290f6cabb436b5",
+    "baseline_run_ids": [
+      "baseline-route-billing",
+      "baseline-route-technical",
+      "baseline-route-account",
+      "baseline-extract-name",
+      "baseline-extract-amount",
+      "baseline-extract-risk",
+      "baseline-code-json",
+      "baseline-code-path",
+      "baseline-risk-confidence",
+      "baseline-risk-category",
+      "baseline-route-billing-repeat",
+      "baseline-route-technical-repeat",
+      "baseline-route-account-repeat",
+      "baseline-extract-name-repeat",
+      "baseline-extract-amount-repeat",
+      "baseline-extract-risk-repeat",
+      "baseline-code-json-repeat",
+      "baseline-code-path-repeat",
+      "baseline-risk-confidence-repeat",
+      "baseline-risk-category-repeat",
+      "baseline-anchor-ping-1",
+      "baseline-anchor-ping-2"
+    ],
+    "candidate_config_hash": "34f4c6e95ffdb2fc5594d2ef1c9ff35ada3dd5bf418851876ca27f68c15d4ac3",
+    "candidate_outputs_hash": "8b3a0bbc7e151741546dcff66bd4ccc08269eebc6f54e859f59a0dbe60210d54",
+    "candidate_run_ids": [
+      "candidate-route-billing",
+      "candidate-route-technical",
+      "candidate-route-account",
+      "candidate-extract-name",
+      "candidate-extract-amount",
+      "candidate-extract-risk",
+      "candidate-code-json",
+      "candidate-code-path",
+      "candidate-risk-confidence",
+      "candidate-risk-category",
+      "candidate-route-billing-repeat",
+      "candidate-route-technical-repeat",
+      "candidate-route-account-repeat",
+      "candidate-extract-name-repeat",
+      "candidate-extract-amount-repeat",
+      "candidate-extract-risk-repeat",
+      "candidate-code-json-repeat",
+      "candidate-code-path-repeat",
+      "candidate-risk-confidence-repeat",
+      "candidate-risk-category-repeat",
+      "candidate-anchor-ping-1",
+      "candidate-anchor-ping-2"
+    ],
+    "comparison_mode": "interleaved_control",
+    "comparison_schedule_hash": "a763bbee6442faad060a84a97fc6393ab7f203b371a619e64cbae3d5bdfbe2b9",
+    "config_adapter": "json-file-config",
+    "control_outputs_hash": "e0bf6f10d8e46d7cae942e0b8793bd594070f77cca3af58fcfa3d47766b0e480",
+    "evalset_hash": "93b1363df56de165f836faecfa4adca56577c630fdb7f244d72ee9cf3a36aa3e",
+    "evidence_level": "orchestrated",
+    "limitations": [
+      "a single interleaved pass does not remove service drift, carryover, or shared-task overfitting"
+    ],
+    "manifest_hash": "4458402926ebf919ddc03d135efcf08ee43d4aef53804220c7b561acbbf258a8",
+    "metric_kind": "agent_task",
+    "order": [
+      "baseline",
+      "proposal_locked",
+      "candidate",
+      "verification"
+    ],
+    "runner": "command-agent-runner",
+    "scenario": "orchestrated-agent-policy-v1"
+  },
+  "health": {
+    "healthy": true,
+    "recommend_rollback": false,
+    "signals": [
+      {
+        "degraded": false,
+        "delta": 0.6,
+        "name": "hit_rate",
+        "prior": 0.4,
+        "recent": 1.0
+      },
+      {
+        "degraded": false,
+        "delta": -0.36,
+        "name": "brier",
+        "prior": 0.4,
+        "recent": 0.04
+      },
+      {
+        "degraded": false,
+        "name": "pending_ratio",
+        "value": 0.0
+      }
+    ]
+  },
+  "integrity": {
+    "comparison_ledger": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 88,
+      "head": "d55266222a20a9677db79e2cdcc09f8fd348155de680d39404d585253b62270d",
+      "valid": true
+    },
+    "experiment_log": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 9,
+      "head": "f0ab4044f2328fcc64ca5c72d9ae6de35e125d69128872b90014d5ebadbed219",
+      "valid": true
+    },
+    "ledger": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 88,
+      "head": "d4b65bd38027207dd77f0058f51f60663550b4a54760792a0a2fb04f09f75130",
+      "valid": true
+    },
+    "proposal_log": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 3,
+      "head": "a61ebc8a50cfaf0f0fc55a2c520bedf8ebfc63d70138d36db3c0e8e7e9fcbf80",
+      "valid": true
+    }
+  },
+  "lessons": {
+    "distilled": [],
+    "gate": "blocked_below_min_samples_or_confidence",
+    "minimum_confidence": 0.6,
+    "minimum_samples": 8
+  },
+  "metrics": {
+    "agent_brier": {
+      "brier": 0.22,
+      "brier_skill": 0.12,
+      "n": 40
+    },
+    "agent_hit_rate": {
+      "hit_rate": 0.7,
+      "hits": 28,
+      "miss_attribution": {
+        "bad_extraction": 4,
+        "poor_confidence": 2,
+        "unsafe_method": 2,
+        "wrong_route": 4
+      },
+      "n": 40
+    },
+    "agent_reliability": [
+      {
+        "actual_rate": 0.7,
+        "bucket": "[0.8,1.0)",
+        "mean_pred": 0.8,
+        "n": 40
+      }
+    ],
+    "anchor_brier": {
+      "brier": 0.04,
+      "brier_skill": 0.84,
+      "n": 4
+    },
+    "baseline_hit_rate": {
+      "hit_rate": 0.4,
+      "hits": 8,
+      "n": 20
+    },
+    "candidate_hit_rate": {
+      "hit_rate": 1.0,
+      "hits": 20,
+      "n": 20
+    },
+    "overall_brier": {
+      "brier": 0.2036,
+      "brier_skill": 0.1855,
+      "n": 44
+    }
+  },
+  "policy_execution": {
+    "action": "keep_candidate",
+    "learning_action": "pause_lesson_injection",
+    "receipt": {
+      "action": "keep",
+      "adapter": "json-file-config",
+      "after_hash": "34f4c6e95ffdb2fc5594d2ef1c9ff35ada3dd5bf418851876ca27f68c15d4ac3",
+      "ts": 1784360280.3579361
+    }
+  },
+  "proposal_verification": {
+    "actual_delta": 0.6,
+    "baseline": 0.4,
+    "current_value": 1.0,
+    "predicted_delta": 0.4,
+    "prev_config": null,
+    "status": "verified"
+  },
+  "sample_gate": {
+    "baseline_n": 20,
+    "candidate_n": 20,
+    "minimum_per_phase": 20,
+    "passed": true
+  },
+  "summary": {
+    "decision": "keep_change",
+    "records_registered": 44,
+    "records_resolved": 44,
+    "scenario": "orchestrated-agent-policy-v1"
+  }
+}

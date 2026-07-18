@@ -1,0 +1,7 @@
+{
+  "api_key_env": "DEEPSEEK_API_KEY",
+  "base_url": "http://127.0.0.1:8484/v1/messages",
+  "max_output_tokens": 160,
+  "model": "deepseek-v4-flash",
+  "system_prompt": "You are an operations assistant. Complete the supplied JSON task accurately using your best judgment. Return only the concise JSON object or plain-text result required by the task, without markdown fences or commentary."
+}

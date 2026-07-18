@@ -1,0 +1,541 @@
+{
+  "artifacts": {
+    "baseline_outputs": "artifacts/deepseek-holdout-replication-run/baseline-outputs.jsonl",
+    "candidate_outputs": "artifacts/deepseek-holdout-replication-run/candidate-outputs.jsonl",
+    "comparison_ledger": "artifacts/deepseek-holdout-replication-run/comparison-ledger.jsonl",
+    "control_outputs": "artifacts/deepseek-holdout-replication-run/control-outputs.jsonl",
+    "dashboard_data": "artifacts/deepseek-holdout-replication-run/dashboard-data.js",
+    "decision": "artifacts/deepseek-holdout-replication-run/decision.md",
+    "experiment_log": "artifacts/deepseek-holdout-replication-run/experiment-log.jsonl",
+    "ledger": "artifacts/deepseek-holdout-replication-run/ledger.jsonl",
+    "proposal_log": "artifacts/deepseek-holdout-replication-run/proposal-log.jsonl",
+    "report": "artifacts/deepseek-holdout-replication-run/drift-report.json"
+  },
+  "comparison": {
+    "candidate_metric": {
+      "hit_rate": 0.906,
+      "hits": 29,
+      "n": 32
+    },
+    "control_metric": {
+      "hit_rate": 0.0,
+      "hits": 0,
+      "n": 32
+    },
+    "control_outputs_hash": "29d16ea57c165c6638e58ca67b70ad18c48929447828884e4e2e4c235a60c971",
+    "effect_baseline_phase": "control",
+    "evalset_hash": "7c704b309bb1e28f8f8629a6ee38330a7042ca4ed483778d97e80e31c00a65d4",
+    "measured_order_counts": {
+      "candidate_first": 16,
+      "control_first": 16
+    },
+    "mode": "interleaved_control",
+    "records_registered": 72,
+    "records_resolved": 72,
+    "schedule": [
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-normalize-05"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-triage-14"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-triage-04"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-normalize-04"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-release-01"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-release-04"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-triage-13"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-triage-05"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-triage-10"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-release-08"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-normalize-02"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-normalize-07"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-triage-12"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-anchor-02"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-triage-11"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-release-02"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-release-03"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-triage-09"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-triage-07"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-triage-06"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-normalize-06"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-anchor-04"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-triage-16"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-release-06"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-normalize-03"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-triage-02"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-anchor-03"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-triage-01"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-anchor-01"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-release-07"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-triage-08"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-triage-03"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-release-05"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-triage-15"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "rep-normalize-01"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "rep-normalize-08"
+      }
+    ],
+    "schedule_hash": "995f1c5eb6410fcf57c09c88b06ee4ffbe6abdaa207d28101a54640a86bb7955",
+    "scope": "holdout"
+  },
+  "decision": {
+    "action": "keep_change",
+    "reasons": [
+      "locked prediction verified: expected +0.30, actual +0.91",
+      "lesson gate produced no lesson because sample/confidence threshold was not met",
+      "paired increment verified: n=32, delta=+0.906, p=1.863e-09"
+    ],
+    "restored_config": null
+  },
+  "drift": {
+    "anchor_n": 0,
+    "overall_n": 0,
+    "status": "insufficient_data"
+  },
+  "effect_gate": {
+    "actual_delta": 0.9062,
+    "alpha": 0.05,
+    "confidence_interval": {
+      "confidence": 0.95,
+      "lower": 0.7812,
+      "method": "deterministic_paired_bootstrap",
+      "samples": 2000,
+      "upper": 1.0
+    },
+    "critical_regressions": [],
+    "exact_p_value": 1.862645149230957e-09,
+    "improvements": 29,
+    "minimum_absolute_delta": 0.05,
+    "minimum_samples": 20,
+    "paired_n": 32,
+    "passed": true,
+    "reasons": [
+      "paired increment verified: n=32, delta=+0.906, p=1.863e-09"
+    ],
+    "regressions": 0,
+    "task_match": true
+  },
+  "experiment": {
+    "anchor_kind": "anchor_task",
+    "baseline_config_hash": "dafabe4ce5b08fa665a065d9b977d0d9ae8469067f5248f10d870c7ef194fbcc",
+    "baseline_evalset_hash": "25e4c63cb65d22b2f1810eaa4e34b66d0a3ae3ea75e71381e715ab661d0c1211",
+    "baseline_outputs_hash": "b32623cc76d30774e326c44eaec58b8abc9c9bbf91aa997b62595c7af6a82d8b",
+    "baseline_run_ids": [
+      "baseline-dev-triage-01",
+      "baseline-dev-triage-02",
+      "baseline-dev-triage-03",
+      "baseline-dev-triage-04",
+      "baseline-dev-triage-05",
+      "baseline-dev-triage-06",
+      "baseline-dev-triage-07",
+      "baseline-dev-triage-08",
+      "baseline-dev-triage-09",
+      "baseline-dev-triage-10",
+      "baseline-dev-triage-11",
+      "baseline-dev-triage-12",
+      "baseline-dev-normalize-01",
+      "baseline-dev-normalize-02",
+      "baseline-dev-normalize-03",
+      "baseline-dev-normalize-04",
+      "baseline-dev-normalize-05",
+      "baseline-dev-normalize-06",
+      "baseline-dev-release-01",
+      "baseline-dev-release-02",
+      "baseline-dev-release-03",
+      "baseline-dev-release-04",
+      "baseline-dev-release-05",
+      "baseline-dev-release-06",
+      "baseline-dev-anchor-01",
+      "baseline-dev-anchor-02"
+    ],
+    "baseline_task_count": 26,
+    "candidate_config_hash": "e14b2838446d163c1c7a348805901456a86a4e9bccdbfff1a4d5914158166901",
+    "candidate_outputs_hash": "5c46de794eb7152280c76000c5257d8dae6c63996b8bb824b84951762fe50793",
+    "candidate_run_ids": [
+      "candidate-rep-triage-01",
+      "candidate-rep-triage-02",
+      "candidate-rep-triage-03",
+      "candidate-rep-triage-04",
+      "candidate-rep-triage-05",
+      "candidate-rep-triage-06",
+      "candidate-rep-triage-07",
+      "candidate-rep-triage-08",
+      "candidate-rep-triage-09",
+      "candidate-rep-triage-10",
+      "candidate-rep-triage-11",
+      "candidate-rep-triage-12",
+      "candidate-rep-triage-13",
+      "candidate-rep-triage-14",
+      "candidate-rep-triage-15",
+      "candidate-rep-triage-16",
+      "candidate-rep-normalize-01",
+      "candidate-rep-normalize-02",
+      "candidate-rep-normalize-03",
+      "candidate-rep-normalize-04",
+      "candidate-rep-normalize-05",
+      "candidate-rep-normalize-06",
+      "candidate-rep-normalize-07",
+      "candidate-rep-normalize-08",
+      "candidate-rep-release-01",
+      "candidate-rep-release-02",
+      "candidate-rep-release-03",
+      "candidate-rep-release-04",
+      "candidate-rep-release-05",
+      "candidate-rep-release-06",
+      "candidate-rep-release-07",
+      "candidate-rep-release-08",
+      "candidate-rep-anchor-01",
+      "candidate-rep-anchor-02",
+      "candidate-rep-anchor-03",
+      "candidate-rep-anchor-04"
+    ],
+    "comparison_mode": "interleaved_control",
+    "comparison_schedule_hash": "995f1c5eb6410fcf57c09c88b06ee4ffbe6abdaa207d28101a54640a86bb7955",
+    "config_adapter": "json-file-config",
+    "confirmation_evalset_hash": "7c704b309bb1e28f8f8629a6ee38330a7042ca4ed483778d97e80e31c00a65d4",
+    "confirmation_task_count": 36,
+    "control_outputs_hash": "29d16ea57c165c6638e58ca67b70ad18c48929447828884e4e2e4c235a60c971",
+    "evalset_hash": "25e4c63cb65d22b2f1810eaa4e34b66d0a3ae3ea75e71381e715ab661d0c1211",
+    "evidence_level": "orchestrated_holdout",
+    "holdout_mode": true,
+    "limitations": [
+      "one disjoint holdout does not establish production generalization or remove service drift"
+    ],
+    "manifest_hash": "5727f7c476c3351219324c0c4b40d3ba76342806e0e8ed5bb25eedd673218b61",
+    "metric_kind": "agent_task",
+    "order": [
+      "development_baseline",
+      "proposal_locked",
+      "config_applied",
+      "holdout_control_candidate",
+      "verification"
+    ],
+    "runner": "command-agent-runner",
+    "scenario": "deepseek-operations-policy-holdout-replication-v1",
+    "task_id_overlap": []
+  },
+  "health": {
+    "healthy": true,
+    "recommend_rollback": false,
+    "scope": "holdout_control_candidate",
+    "signals": [
+      {
+        "degraded": false,
+        "delta": 0.906,
+        "name": "hit_rate",
+        "prior": 0.0,
+        "recent": 0.906
+      },
+      {
+        "degraded": false,
+        "name": "pending_ratio",
+        "value": 0.0
+      }
+    ]
+  },
+  "integrity": {
+    "comparison_ledger": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 144,
+      "head": "2b8425b06d719651b2c532310358c9a4131fcfed127f8c826b52eb8ee98de44d",
+      "valid": true
+    },
+    "experiment_log": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 9,
+      "head": "8f1973cbed7210f835d5bd6648be28060f1cb27da3fbd3b1b6050e7d7dce52f7",
+      "valid": true
+    },
+    "ledger": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 124,
+      "head": "c02e3d4cebcfdc67412f51209f59d337b3837e0f5133ee25aa397bbeb3df7f4d",
+      "valid": true
+    },
+    "proposal_log": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 3,
+      "head": "8af67f3d292ddd42d4488576b2381587a9fd0d11303d126cb98d7417454351d4",
+      "valid": true
+    }
+  },
+  "lessons": {
+    "distilled": [],
+    "gate": "blocked_below_min_samples_or_confidence",
+    "minimum_confidence": 0.6,
+    "minimum_samples": 8
+  },
+  "metrics": {
+    "agent_brier": null,
+    "agent_hit_rate": {
+      "hit_rate": 0.518,
+      "hits": 29,
+      "miss_attribution": {
+        "boundary_rule_failed": 2,
+        "normalization_policy_failed": 6,
+        "priority_rule_failed": 5,
+        "release_policy_failed": 5,
+        "wrong_policy_queue": 9
+      },
+      "n": 56
+    },
+    "agent_reliability": [],
+    "anchor_brier": null,
+    "baseline_hit_rate": {
+      "hit_rate": 0.0,
+      "hits": 0,
+      "n": 24
+    },
+    "candidate_hit_rate": {
+      "hit_rate": 0.906,
+      "hits": 29,
+      "n": 32
+    },
+    "overall_brier": null
+  },
+  "policy_execution": {
+    "action": "keep_candidate",
+    "learning_action": "pause_lesson_injection",
+    "receipt": {
+      "action": "keep",
+      "adapter": "json-file-config",
+      "after_hash": "e14b2838446d163c1c7a348805901456a86a4e9bccdbfff1a4d5914158166901",
+      "ts": 1784363124.173298
+    }
+  },
+  "proposal_verification": {
+    "actual_delta": 0.906,
+    "baseline": 0.0,
+    "current_value": 0.906,
+    "predicted_delta": 0.3,
+    "prev_config": null,
+    "status": "verified"
+  },
+  "sample_gate": {
+    "baseline_n": 24,
+    "candidate_n": 32,
+    "minimum_per_phase": 20,
+    "passed": true
+  },
+  "summary": {
+    "decision": "keep_change",
+    "records_registered": 62,
+    "records_resolved": 62,
+    "scenario": "deepseek-operations-policy-holdout-replication-v1"
+  }
+}

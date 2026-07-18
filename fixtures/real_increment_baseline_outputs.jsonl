@@ -1,0 +1,5 @@
+{"task_id":"route-billing","output":{"route":"billing"},"prob":0.7,"note":"baseline routed the billing request correctly"}
+{"task_id":"extract-invoice","output":{"invoice_id":"INV-1402"},"prob":0.4,"note":"baseline transposed the invoice id"}
+{"task_id":"code-json","output":"Use a regular expression to split the string.","prob":0.4,"note":"baseline skipped the required parser"}
+{"task_id":"risk-score","output":{"confidence":0.82},"prob":0.7,"note":"baseline produced usable confidence"}
+{"task_id":"canary-ping","output":"pong","prob":0.9,"note":"baseline canary passed"}

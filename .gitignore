@@ -5,3 +5,5 @@ __pycache__/
 video/.build/
 video/*.mp4
 video/*.jpg
+private-evals/*
+!private-evals/README.md

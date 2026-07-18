@@ -1,0 +1,166 @@
+{
+  "benchmark_id": "analyst-guide-v8-review-v1",
+  "comparison": {
+    "candidate_metric": {
+      "hit_rate": 0.417,
+      "hits": 5,
+      "n": 12
+    },
+    "control_metric": {
+      "hit_rate": 0.167,
+      "hits": 2,
+      "n": 12
+    },
+    "measured_order_counts": {
+      "candidate_first": 6,
+      "control_first": 6
+    },
+    "mode": "interleaved_control",
+    "records_registered": 32,
+    "records_resolved": 32,
+    "schedule_hash": "554f9b551c9f6225d1869bf34e8e150e5036c5f18f343be92c53cfbbecad0687",
+    "schedule_withheld": true,
+    "scope": "holdout"
+  },
+  "decision": {
+    "action": "pause_for_unproven_increment",
+    "config_action": "restore_baseline",
+    "learning_action": "pause_lesson_injection",
+    "receipt": {
+      "action": "restore",
+      "adapter": "json-file-config",
+      "after_hash": "98b9c77b6ba439084f26be9f8e3372f66fe4e68bae92570c5db8fbfe30303e0f",
+      "before_hash": "5b9a9bb82c3e88045b1b76703ff300bcba5d9118a7670555113de9b31d424b22"
+    }
+  },
+  "effect_gate": {
+    "actual_delta": 0.25,
+    "alpha": 0.05,
+    "confidence_interval": {
+      "confidence": 0.95,
+      "lower": 0.0,
+      "method": "deterministic_paired_bootstrap",
+      "samples": 2000,
+      "upper": 0.5
+    },
+    "exact_p_value": 0.125,
+    "improvements": 3,
+    "minimum_absolute_delta": 0.1,
+    "minimum_samples": 12,
+    "paired_n": 12,
+    "passed": false,
+    "regressions": 0,
+    "task_match": true
+  },
+  "experiment": {
+    "baseline_config_hash": "98b9c77b6ba439084f26be9f8e3372f66fe4e68bae92570c5db8fbfe30303e0f",
+    "baseline_evalset_hash": "1046be67bf3f3c66ea229106318ac7e0fe08d304b02eaaf800910c54a5001c46",
+    "baseline_outputs_hash": "bd96cd93445c3955c87b1014fb21c054188f3588ef5af4e47e98a12c35ca3f4b",
+    "baseline_task_count": 9,
+    "candidate_config_hash": "5b9a9bb82c3e88045b1b76703ff300bcba5d9118a7670555113de9b31d424b22",
+    "candidate_outputs_hash": "82abcbee76eef99dfcb6ab4cd3f5ac9c90e97d968781cc907310870b813ab5f5",
+    "comparison_schedule_hash": "554f9b551c9f6225d1869bf34e8e150e5036c5f18f343be92c53cfbbecad0687",
+    "config_adapter": "json-file-config",
+    "confirmation_evalset_hash": "8bfc90a51bfc9725ddf91de6d7580df8b8e9bc960f24b84d0169be8af4c2bf6d",
+    "confirmation_task_count": 16,
+    "control_outputs_hash": "1ce7d940ff66052f9e03179389624848b8b5ea74800b71f6cb05fd5f4622cbe6",
+    "evidence_level": "orchestrated_holdout",
+    "manifest_hash": "d9c0f53eb6ffedd919b18ecb80aac58633a72192e4d0dd8a9a9a8cb6ab5b7814",
+    "runner": "command-agent-runner",
+    "task_id_overlap_count": 0
+  },
+  "health": {
+    "healthy": true,
+    "recommend_rollback": false,
+    "scope": "holdout_control_candidate",
+    "signals": [
+      {
+        "degraded": false,
+        "delta": 0.25,
+        "name": "hit_rate",
+        "prior": 0.167,
+        "recent": 0.417
+      },
+      {
+        "degraded": false,
+        "name": "pending_ratio",
+        "value": 0.0
+      }
+    ]
+  },
+  "integrity": {
+    "comparison_ledger": {
+      "algorithm": "sha256",
+      "events_verified": 64,
+      "head": "6ab648b2b6107da29b0741d892d995a3f45bd29ff0b12e96ebcd02af14ab9f46",
+      "valid": true
+    },
+    "experiment_log": {
+      "algorithm": "sha256",
+      "events_verified": 9,
+      "head": "bb73164fd541903f1c99ff03fc6a8178fca73e6ba645b395d8464519000c6d0d",
+      "valid": true
+    },
+    "ledger": {
+      "algorithm": "sha256",
+      "events_verified": 50,
+      "head": "1321960868d3a276513af15be297b947682ccf60578359e24fd20f605f9b3eb3",
+      "valid": true
+    },
+    "proposal_log": {
+      "algorithm": "sha256",
+      "events_verified": 3,
+      "head": "75d88630bd8c8eea50526a9e969622eaf0d4c32ee370964bb5cd778f38402106",
+      "valid": true
+    }
+  },
+  "limitations": [
+    "Raw reports, labels, configs, outputs, and event logs are withheld.",
+    "This aggregate cannot be independently reproduced from the public package alone.",
+    "One private holdout does not establish production generalization or eliminate service drift.",
+    "The benchmark measures agreement with completed human review decisions, not company-fact correctness."
+  ],
+  "response_metadata": {
+    "requested_models": [
+      "deepseek-v4-flash"
+    ],
+    "response_id_coverage": 41,
+    "response_models": [
+      "deepseek-v4-flash"
+    ],
+    "responses": 41,
+    "responses_by_phase": {
+      "development_baseline": 9,
+      "holdout_candidate": 16,
+      "holdout_control": 16
+    },
+    "stop_reasons": [
+      "end_turn"
+    ],
+    "summed_call_duration_ms": 32160.312,
+    "unique_response_ids": 41,
+    "usage": {
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3584,
+      "input_tokens": 144511,
+      "output_tokens": 613
+    }
+  },
+  "sample_gate": {
+    "baseline_n": 7,
+    "candidate_n": 12,
+    "minimum_per_phase": 7,
+    "passed": true
+  },
+  "schema_version": 1,
+  "source_report_sha256": "58d7625fbeaf47cd01dbe97ef4014ad441598be801391f357af2c262622b41e6",
+  "visibility": {
+    "configs_and_prompts": "withheld",
+    "evalsets_and_labels": "withheld",
+    "event_logs": "withheld",
+    "level": "sealed_private_evalset",
+    "public_reproducibility": false,
+    "raw_sources": "withheld",
+    "task_outputs_and_notes": "withheld"
+  }
+}

@@ -1,0 +1,414 @@
+{
+  "artifacts": {
+    "baseline_outputs": "artifacts/deepseek-live-run/baseline-outputs.jsonl",
+    "candidate_outputs": "artifacts/deepseek-live-run/candidate-outputs.jsonl",
+    "comparison_ledger": "artifacts/deepseek-live-run/comparison-ledger.jsonl",
+    "control_outputs": "artifacts/deepseek-live-run/control-outputs.jsonl",
+    "dashboard_data": "artifacts/deepseek-live-run/dashboard-data.js",
+    "decision": "artifacts/deepseek-live-run/decision.md",
+    "experiment_log": "artifacts/deepseek-live-run/experiment-log.jsonl",
+    "ledger": "artifacts/deepseek-live-run/ledger.jsonl",
+    "proposal_log": "artifacts/deepseek-live-run/proposal-log.jsonl",
+    "report": "artifacts/deepseek-live-run/drift-report.json"
+  },
+  "comparison": {
+    "candidate_metric": {
+      "hit_rate": 1.0,
+      "hits": 20,
+      "n": 20
+    },
+    "control_metric": {
+      "hit_rate": 0.4,
+      "hits": 8,
+      "n": 20
+    },
+    "control_outputs_hash": "cadafb41867868cf4e8e8e2e834d130423c37e9376a4d14bdd0c49b551592c82",
+    "effect_baseline_phase": "control",
+    "measured_order_counts": {
+      "candidate_first": 10,
+      "control_first": 10
+    },
+    "mode": "interleaved_control",
+    "records_registered": 44,
+    "records_resolved": 44,
+    "schedule": [
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "anchor-ping-2"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "route-technical"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "code-path"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "extract-risk"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "code-json"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "extract-name-repeat"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "route-account"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "route-billing-repeat"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "extract-risk-repeat"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "risk-category"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "extract-amount"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "extract-name"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "risk-category-repeat"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "route-account-repeat"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "route-technical-repeat"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "route-billing"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "risk-confidence"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "code-path-repeat"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "risk-confidence-repeat"
+      },
+      {
+        "order": [
+          "control",
+          "candidate"
+        ],
+        "task_id": "code-json-repeat"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "extract-amount-repeat"
+      },
+      {
+        "order": [
+          "candidate",
+          "control"
+        ],
+        "task_id": "anchor-ping-1"
+      }
+    ],
+    "schedule_hash": "133b091c35d822f1d9cad86438411620a5ea3fb7cc62523d0f51c0392131373e"
+  },
+  "decision": {
+    "action": "keep_change",
+    "reasons": [
+      "locked prediction verified: expected +0.40, actual +0.60",
+      "lesson gate produced no lesson because sample/confidence threshold was not met",
+      "paired increment verified: n=20, delta=+0.600, p=0.000244"
+    ],
+    "restored_config": null
+  },
+  "drift": {
+    "anchor_n": 0,
+    "overall_n": 0,
+    "status": "insufficient_data"
+  },
+  "effect_gate": {
+    "actual_delta": 0.6,
+    "alpha": 0.05,
+    "confidence_interval": {
+      "confidence": 0.95,
+      "lower": 0.4,
+      "method": "deterministic_paired_bootstrap",
+      "samples": 2000,
+      "upper": 0.8
+    },
+    "critical_regressions": [],
+    "exact_p_value": 0.000244,
+    "improvements": 12,
+    "minimum_absolute_delta": 0.05,
+    "minimum_samples": 20,
+    "paired_n": 20,
+    "passed": true,
+    "reasons": [
+      "paired increment verified: n=20, delta=+0.600, p=0.000244"
+    ],
+    "regressions": 0,
+    "task_match": true
+  },
+  "experiment": {
+    "anchor_kind": "anchor_task",
+    "baseline_config_hash": "9704e90be458fe20f94eb5221c3c5262fd35dc3fe3911080d3b2fb1dde89a5f2",
+    "baseline_outputs_hash": "55cfb8bafbf9bc1446c5a4d170750b09b0ea91904ca6491c4ab3fc0f129b66a4",
+    "baseline_run_ids": [
+      "baseline-route-billing",
+      "baseline-route-technical",
+      "baseline-route-account",
+      "baseline-extract-name",
+      "baseline-extract-amount",
+      "baseline-extract-risk",
+      "baseline-code-json",
+      "baseline-code-path",
+      "baseline-risk-confidence",
+      "baseline-risk-category",
+      "baseline-route-billing-repeat",
+      "baseline-route-technical-repeat",
+      "baseline-route-account-repeat",
+      "baseline-extract-name-repeat",
+      "baseline-extract-amount-repeat",
+      "baseline-extract-risk-repeat",
+      "baseline-code-json-repeat",
+      "baseline-code-path-repeat",
+      "baseline-risk-confidence-repeat",
+      "baseline-risk-category-repeat",
+      "baseline-anchor-ping-1",
+      "baseline-anchor-ping-2"
+    ],
+    "candidate_config_hash": "b15395235305d7a965122a71c716ce180e99a6f8ef69e48271b4d79d7cddeef1",
+    "candidate_outputs_hash": "6c6e4a5fbfed091b3e1de731862bd7a1ee4be7689fb6e281204211c9932c58f3",
+    "candidate_run_ids": [
+      "candidate-route-billing",
+      "candidate-route-technical",
+      "candidate-route-account",
+      "candidate-extract-name",
+      "candidate-extract-amount",
+      "candidate-extract-risk",
+      "candidate-code-json",
+      "candidate-code-path",
+      "candidate-risk-confidence",
+      "candidate-risk-category",
+      "candidate-route-billing-repeat",
+      "candidate-route-technical-repeat",
+      "candidate-route-account-repeat",
+      "candidate-extract-name-repeat",
+      "candidate-extract-amount-repeat",
+      "candidate-extract-risk-repeat",
+      "candidate-code-json-repeat",
+      "candidate-code-path-repeat",
+      "candidate-risk-confidence-repeat",
+      "candidate-risk-category-repeat",
+      "candidate-anchor-ping-1",
+      "candidate-anchor-ping-2"
+    ],
+    "comparison_mode": "interleaved_control",
+    "comparison_schedule_hash": "133b091c35d822f1d9cad86438411620a5ea3fb7cc62523d0f51c0392131373e",
+    "config_adapter": "json-file-config",
+    "control_outputs_hash": "cadafb41867868cf4e8e8e2e834d130423c37e9376a4d14bdd0c49b551592c82",
+    "evalset_hash": "93b1363df56de165f836faecfa4adca56577c630fdb7f244d72ee9cf3a36aa3e",
+    "evidence_level": "orchestrated",
+    "limitations": [
+      "a single interleaved pass does not remove service drift, carryover, or shared-task overfitting"
+    ],
+    "manifest_hash": "1e440dc09144db91f83c48bd8a90aeea6848e7f1dad3f327e021a262d73111df",
+    "metric_kind": "agent_task",
+    "order": [
+      "baseline",
+      "proposal_locked",
+      "candidate",
+      "verification"
+    ],
+    "runner": "command-agent-runner",
+    "scenario": "deepseek-operation-contract-v1"
+  },
+  "health": {
+    "healthy": true,
+    "recommend_rollback": false,
+    "signals": [
+      {
+        "degraded": false,
+        "delta": 0.6,
+        "name": "hit_rate",
+        "prior": 0.4,
+        "recent": 1.0
+      },
+      {
+        "degraded": false,
+        "name": "pending_ratio",
+        "value": 0.0
+      }
+    ]
+  },
+  "integrity": {
+    "comparison_ledger": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 88,
+      "head": "62ddf507412429321392f1a95d7c987acbdb0a5dacee5214ec56b6ffbae5c9ac",
+      "valid": true
+    },
+    "experiment_log": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 9,
+      "head": "66534f3c1d93cbb80d7613e77fa9eb2565b975dea68a26063b759e2f4cb97f79",
+      "valid": true
+    },
+    "ledger": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 88,
+      "head": "5cec9bde4ed9062aa3fd10a6dc6760757f695285df3d63d43a29310d1101ce9f",
+      "valid": true
+    },
+    "proposal_log": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 3,
+      "head": "dc245085b35ecaf81d7fa8a171cc9c22f7f84acac4d3fa03a553bd88bec0e3e3",
+      "valid": true
+    }
+  },
+  "lessons": {
+    "distilled": [],
+    "gate": "blocked_below_min_samples_or_confidence",
+    "minimum_confidence": 0.6,
+    "minimum_samples": 8
+  },
+  "metrics": {
+    "agent_brier": null,
+    "agent_hit_rate": {
+      "hit_rate": 0.7,
+      "hits": 28,
+      "miss_attribution": {
+        "bad_extraction": 4,
+        "poor_confidence": 2,
+        "unsafe_method": 2,
+        "wrong_route": 4
+      },
+      "n": 40
+    },
+    "agent_reliability": [],
+    "anchor_brier": null,
+    "baseline_hit_rate": {
+      "hit_rate": 0.4,
+      "hits": 8,
+      "n": 20
+    },
+    "candidate_hit_rate": {
+      "hit_rate": 1.0,
+      "hits": 20,
+      "n": 20
+    },
+    "overall_brier": null
+  },
+  "policy_execution": {
+    "action": "keep_candidate",
+    "learning_action": "pause_lesson_injection",
+    "receipt": {
+      "action": "keep",
+      "adapter": "json-file-config",
+      "after_hash": "b15395235305d7a965122a71c716ce180e99a6f8ef69e48271b4d79d7cddeef1",
+      "ts": 1784361029.8281898
+    }
+  },
+  "proposal_verification": {
+    "actual_delta": 0.6,
+    "baseline": 0.4,
+    "current_value": 1.0,
+    "predicted_delta": 0.4,
+    "prev_config": null,
+    "status": "verified"
+  },
+  "sample_gate": {
+    "baseline_n": 20,
+    "candidate_n": 20,
+    "minimum_per_phase": 20,
+    "passed": true
+  },
+  "summary": {
+    "decision": "keep_change",
+    "records_registered": 44,
+    "records_resolved": 44,
+    "scenario": "deepseek-operation-contract-v1"
+  }
+}

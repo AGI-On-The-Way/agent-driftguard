@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Agent DriftGuard | Experiment Audit</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="./dashboard-data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Agent DriftGuard home">
+        <span class="brand-mark" aria-hidden="true">DG</span>
+        <span>Agent DriftGuard</span>
+      </a>
+      <div class="header-actions">
+        <span class="local-label">LOCAL ARTIFACT AUDIT</span>
+        <button class="copy-button" id="copy-command" type="button" title="Copy reproduction command">
+          Copy command
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="data-alert" id="data-alert" role="alert" hidden>
+      <strong>Dashboard data unavailable.</strong>
+      <span id="data-alert-detail">Expected ./dashboard-data.js to define window.DRIFTGUARD_DATA.</span>
+    </div>
+
+    <section class="verdict-band" id="verdict-band" aria-labelledby="verdict-heading">
+      <div class="verdict-main">
+        <p class="eyebrow">EXPERIMENT AUDIT VERDICT</p>
+        <div class="verdict-heading-row">
+          <h1 id="verdict-heading">Loading verdict</h1>
+          <span class="status-badge status-danger" id="proposal-status">PENDING</span>
+        </div>
+        <p class="verdict-summary" id="verdict-summary">Reading deterministic evidence from local artifacts.</p>
+        <p class="experiment-id">Proposal <code id="proposal-id">Unavailable</code></p>
+      </div>
+      <dl class="verdict-facts" aria-label="Verdict summary">
+        <div>
+          <dt>Policy action</dt>
+          <dd class="danger-text" id="action-value">ROLLBACK</dd>
+        </div>
+        <div>
+          <dt>Learning channel</dt>
+          <dd class="warning-text" id="lesson-action">PAUSE LESSONS</dd>
+        </div>
+        <div>
+          <dt>Evidence</dt>
+          <dd id="resolution-count">--/-- resolved</dd>
+        </div>
+        <div>
+          <dt>Integrity</dt>
+          <dd class="success-text" id="chain-status">Checking hash chain</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="prediction-section" aria-labelledby="prediction-title">
+      <div class="section-heading compact-heading">
+        <div>
+          <p class="eyebrow">LOCKED HYPOTHESIS</p>
+          <h2 id="prediction-title">Prediction vs actual</h2>
+        </div>
+        <p id="metric-name">Metric unavailable</p>
+      </div>
+      <div class="metric-strip">
+        <div class="metric-cell">
+          <span class="metric-label">Baseline</span>
+          <strong id="baseline-value">--</strong>
+          <span class="metric-note" id="baseline-note">locked before change</span>
+        </div>
+        <div class="metric-cell">
+          <span class="metric-label">Predicted delta</span>
+          <strong class="success-text" id="predicted-delta">--</strong>
+          <span class="metric-note">proposal claim</span>
+        </div>
+        <div class="metric-cell">
+          <span class="metric-label">Candidate value</span>
+          <strong id="candidate-value">--</strong>
+          <span class="metric-note" id="candidate-note">observed after change</span>
+        </div>
+        <div class="metric-cell metric-cell-alert">
+          <span class="metric-label">Actual delta</span>
+          <strong class="danger-text" id="actual-delta">--</strong>
+          <span class="metric-note" id="prediction-miss">awaiting verification</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-section" aria-labelledby="timeline-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">AUDIT TRAIL</p>
+          <h2 id="timeline-title">Experiment timeline</h2>
+        </div>
+        <p>Order enforced by the proposal and evidence logs.</p>
+      </div>
+      <ol class="timeline">
+        <li class="timeline-step is-complete">
+          <span class="step-index">01</span>
+          <div><strong>Baseline</strong><span id="time-baseline">Timestamp unavailable</span></div>
+        </li>
+        <li class="timeline-step is-complete">
+          <span class="step-index">02</span>
+          <div><strong>Proposal locked</strong><span id="time-proposal">Timestamp unavailable</span></div>
+        </li>
+        <li class="timeline-step is-complete">
+          <span class="step-index">03</span>
+          <div><strong id="candidate-step-label">Candidate</strong><span id="time-candidate">Timestamp unavailable</span></div>
+        </li>
+        <li class="timeline-step is-danger" id="verification-step">
+          <span class="step-index">04</span>
+          <div><strong>Verification</strong><span id="time-verification">Timestamp unavailable</span></div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="ledger-section" aria-labelledby="ledger-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">APPEND-ONLY EVIDENCE</p>
+          <h2 id="ledger-title">Evidence Ledger</h2>
+        </div>
+        <p id="ledger-meta">Waiting for ledger events.</p>
+      </div>
+      <div class="ledger-layout">
+        <div class="ledger-matrix" aria-label="Evidence records">
+          <div class="ledger-group">
+            <div class="group-heading">
+              <h3>Anchor tasks</h3>
+              <span id="anchor-summary">0 records</span>
+            </div>
+            <div class="evidence-grid" id="anchor-grid"></div>
+          </div>
+          <div class="ledger-group">
+            <div class="group-heading">
+              <h3>Agent tasks</h3>
+              <span id="agent-summary">0 records</span>
+            </div>
+            <div class="evidence-grid" id="agent-grid"></div>
+          </div>
+          <div class="ledger-legend" aria-label="Evidence status legend">
+            <span><i class="legend-dot hit"></i>Hit</span>
+            <span><i class="legend-dot miss"></i>Miss</span>
+            <span><i class="legend-dot pending"></i>Pending</span>
+          </div>
+        </div>
+
+        <aside class="event-inspector" aria-labelledby="inspector-title">
+          <div class="inspector-header">
+            <div>
+              <p class="eyebrow">SELECTED RECORD</p>
+              <h3 id="inspector-title">Select an evidence tile</h3>
+            </div>
+            <span class="status-badge status-neutral" id="inspector-outcome">EMPTY</span>
+          </div>
+          <div class="event-columns">
+            <div>
+              <h4>Register event</h4>
+              <pre id="register-event">No register event selected.</pre>
+            </div>
+            <div>
+              <h4>Review event</h4>
+              <pre id="review-event">No review event selected.</pre>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="diagnostics-section" aria-labelledby="diagnostics-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">DETERMINISTIC SENSORS</p>
+          <h2 id="diagnostics-title">Diagnostics</h2>
+        </div>
+        <p id="diagnostics-summary">Health, drift, and calibration evaluate the change independently.</p>
+      </div>
+      <div class="diagnostic-grid">
+        <article class="diagnostic-card">
+          <div class="card-heading">
+            <div><span class="card-index">01</span><h3>Health</h3></div>
+            <span class="status-badge status-danger" id="health-status">DEGRADED</span>
+          </div>
+          <div class="comparison-block">
+            <div class="comparison-label"><span>Hit rate</span><strong id="hit-rate-values">-- to --</strong></div>
+            <div class="bar-track"><span class="bar prior" id="hit-rate-prior-bar"></span></div>
+            <div class="bar-track"><span class="bar danger" id="hit-rate-recent-bar"></span></div>
+          </div>
+          <div class="comparison-block">
+            <div class="comparison-label"><span>Brier score <small>lower is better</small></span><strong id="brier-values">-- to --</strong></div>
+            <div class="bar-track"><span class="bar prior" id="brier-prior-bar"></span></div>
+            <div class="bar-track"><span class="bar danger" id="brier-recent-bar"></span></div>
+          </div>
+          <p class="diagnostic-note" id="health-note">Health signals unavailable.</p>
+        </article>
+
+        <article class="diagnostic-card">
+          <div class="card-heading">
+            <div><span class="card-index">02</span><h3>Drift</h3></div>
+            <span class="status-badge status-warning" id="drift-status">CHECKING</span>
+          </div>
+          <dl class="stat-list">
+            <div><dt>Anchor Brier</dt><dd class="success-text" id="anchor-brier">--</dd></div>
+            <div><dt>Overall Brier</dt><dd class="danger-text" id="overall-brier">--</dd></div>
+            <div><dt>Calibration gap</dt><dd class="danger-text" id="drift-gap">--</dd></div>
+          </dl>
+          <div class="gap-scale" aria-hidden="true">
+            <span class="gap-tolerance"></span>
+            <span class="gap-marker" id="gap-marker"></span>
+          </div>
+          <p class="diagnostic-note" id="drift-note">Drift signals unavailable.</p>
+        </article>
+
+        <article class="diagnostic-card">
+          <div class="card-heading">
+            <div><span class="card-index">03</span><h3 id="effect-title">Reliability</h3></div>
+            <span class="status-badge status-danger" id="reliability-status">MISCALIBRATED</span>
+          </div>
+          <div class="reliability-chart" aria-label="Predicted versus actual success rate">
+            <div class="reliability-row">
+              <span id="effect-primary-label">Mean prediction</span>
+              <div class="bar-track"><span class="bar warning" id="reliability-pred-bar"></span></div>
+              <strong id="reliability-pred">--</strong>
+            </div>
+            <div class="reliability-row">
+              <span id="effect-secondary-label">Actual rate</span>
+              <div class="bar-track"><span class="bar danger" id="reliability-actual-bar"></span></div>
+              <strong id="reliability-actual">--</strong>
+            </div>
+          </div>
+          <dl class="mini-stats">
+            <div><dt id="effect-stat-one-label">Bucket</dt><dd id="reliability-bucket">--</dd></div>
+            <div><dt id="effect-stat-two-label">Samples</dt><dd id="reliability-samples">--</dd></div>
+            <div><dt id="effect-stat-three-label">Agent Brier</dt><dd id="agent-brier">--</dd></div>
+          </dl>
+          <p class="diagnostic-note" id="reliability-note">Reliability data unavailable.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="decision-section" aria-labelledby="decision-title">
+      <div class="lesson-panel" id="lesson-panel">
+        <p class="eyebrow">LESSON GATE</p>
+        <div class="gate-verdict" id="gate-verdict">
+          <h2 id="decision-title">BLOCKED</h2>
+          <span class="gate-icon" id="gate-icon" aria-hidden="true">X</span>
+        </div>
+        <p id="lesson-gate-reason">No lesson enters the feedback loop.</p>
+        <dl class="gate-stats">
+          <div><dt>Minimum samples</dt><dd id="minimum-samples">--</dd></div>
+          <div><dt>Minimum confidence</dt><dd id="minimum-confidence">--</dd></div>
+          <div><dt>Lessons distilled</dt><dd id="lessons-distilled">--</dd></div>
+        </dl>
+      </div>
+      <div class="config-panel">
+        <div class="section-heading compact-heading">
+          <div>
+            <p class="eyebrow" id="config-eyebrow">ROLLBACK OUTPUT</p>
+            <h2 id="config-title">Restored config</h2>
+          </div>
+          <span class="status-badge status-success" id="config-status">RESTORED</span>
+        </div>
+        <pre id="restored-config">Restored config unavailable.</pre>
+      </div>
+    </section>
+
+    <section class="artifacts-section" aria-labelledby="artifacts-title">
+      <div>
+        <p class="eyebrow">REPRODUCIBLE OUTPUTS</p>
+        <h2 id="artifacts-title">Original artifacts</h2>
+        <p>Inspect the machine-readable source behind every visible claim.</p>
+      </div>
+      <nav class="artifact-links" aria-label="Original artifact files">
+        <a href="./drift-report.json">Drift report <span aria-hidden="true">&rarr;</span></a>
+        <a href="./decision.md">Decision <span aria-hidden="true">&rarr;</span></a>
+        <a href="./ledger.jsonl">Evidence ledger <span aria-hidden="true">&rarr;</span></a>
+        <a id="comparison-ledger-link" href="./comparison-ledger.jsonl" hidden>Comparison ledger <span aria-hidden="true">&rarr;</span></a>
+        <a id="control-outputs-link" href="./control-outputs.jsonl" hidden>Control outputs <span aria-hidden="true">&rarr;</span></a>
+        <a href="./proposal-log.jsonl">Proposal log <span aria-hidden="true">&rarr;</span></a>
+        <a href="./dashboard-data.js">Dashboard data <span aria-hidden="true">&rarr;</span></a>
+      </nav>
+    </section>
+  </main>
+
+  <footer>
+    <span>Agent DriftGuard</span>
+    <code id="command-display">python3 scripts/run_demo.py</code>
+    <span id="integrity-footer">Local deterministic audit</span>
+  </footer>
+
+  <noscript>
+    <div class="noscript-message">JavaScript is required to render the local audit artifact.</div>
+  </noscript>
+</body>
+</html>

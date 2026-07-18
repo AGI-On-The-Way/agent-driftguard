@@ -17,6 +17,19 @@ from .critic import (
     RequireFalsifiable,
 )
 from .diversity import check_diversity, streak
+from .evalset import CheckResult, build_outcome_rows, verify_task_output
+from .experiment import (
+    AgentRunner,
+    CommandAgentRunner,
+    ConfigAdapter,
+    ExperimentPaths,
+    ExperimentPolicy,
+    JsonFileConfigAdapter,
+    format_p_value,
+    json_hash,
+    paired_effect_gate,
+    run_experiment,
+)
 from .health import HealthReport, drift_check, health_check
 from .ledger import Ledger
 from .lessons import (
@@ -26,6 +39,21 @@ from .lessons import (
     distill,
 )
 from .proposals import ProposalLog
+from .private_eval import (
+    build_private_review_benchmark,
+    extract_docx_body_text,
+    normalize_disposition,
+    parse_review_label,
+    quality_band,
+)
+from .rollout import RolloutPaths, RunOutcomeAdapter, build_decision, decide, evaluate_rollout
+from .sealed_evidence import (
+    aggregate_response_metadata,
+    build_sealed_evidence,
+    sealed_evidence_hash,
+    sha256_file,
+)
+from .shadow import ShadowPaths, run_blind_shadow_pilot
 from .verdict import Adapter, Outcome, Verdict, review_pending
 
 __all__ = [
@@ -52,8 +80,41 @@ __all__ = [
     "RequireFalsifiable",
     "NoActiveDuplicate",
     "FlagOverconfidentMiss",
+    # evalsets
+    "CheckResult",
+    "build_outcome_rows",
+    "verify_task_output",
+    # authoritative experiment lifecycle
+    "AgentRunner",
+    "ConfigAdapter",
+    "CommandAgentRunner",
+    "JsonFileConfigAdapter",
+    "ExperimentPaths",
+    "ExperimentPolicy",
+    "run_experiment",
+    "paired_effect_gate",
+    "format_p_value",
+    "json_hash",
+    # private representative evidence
+    "extract_docx_body_text",
+    "parse_review_label",
+    "quality_band",
+    "normalize_disposition",
+    "build_private_review_benchmark",
+    "aggregate_response_metadata",
+    "build_sealed_evidence",
+    "sealed_evidence_hash",
+    "sha256_file",
+    "ShadowPaths",
+    "run_blind_shadow_pilot",
     # proposals (C + F)
     "ProposalLog",
+    # rollout evaluator
+    "RolloutPaths",
+    "RunOutcomeAdapter",
+    "evaluate_rollout",
+    "decide",
+    "build_decision",
     # diversity (E)
     "check_diversity",
     "streak",

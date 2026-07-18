@@ -18,7 +18,7 @@
       </a>
       <div class="header-actions">
         <span class="local-label">LOCAL ARTIFACT AUDIT</span>
-        <button class="copy-button" id="copy-command" type="button" title="Copy demo command">
+        <button class="copy-button" id="copy-command" type="button" title="Copy reproduction command">
           Copy command
         </button>
       </div>
@@ -73,7 +73,7 @@
         <div class="metric-cell">
           <span class="metric-label">Baseline</span>
           <strong id="baseline-value">--</strong>
-          <span class="metric-note">locked before change</span>
+          <span class="metric-note" id="baseline-note">locked before change</span>
         </div>
         <div class="metric-cell">
           <span class="metric-label">Predicted delta</span>
@@ -83,7 +83,7 @@
         <div class="metric-cell">
           <span class="metric-label">Candidate value</span>
           <strong id="candidate-value">--</strong>
-          <span class="metric-note">observed after change</span>
+          <span class="metric-note" id="candidate-note">observed after change</span>
         </div>
         <div class="metric-cell metric-cell-alert">
           <span class="metric-label">Actual delta</span>
@@ -112,7 +112,7 @@
         </li>
         <li class="timeline-step is-complete">
           <span class="step-index">03</span>
-          <div><strong>Candidate</strong><span id="time-candidate">Timestamp unavailable</span></div>
+          <div><strong id="candidate-step-label">Candidate</strong><span id="time-candidate">Timestamp unavailable</span></div>
         </li>
         <li class="timeline-step is-danger" id="verification-step">
           <span class="step-index">04</span>
@@ -220,25 +220,25 @@
 
         <article class="diagnostic-card">
           <div class="card-heading">
-            <div><span class="card-index">03</span><h3>Reliability</h3></div>
+            <div><span class="card-index">03</span><h3 id="effect-title">Reliability</h3></div>
             <span class="status-badge status-danger" id="reliability-status">MISCALIBRATED</span>
           </div>
           <div class="reliability-chart" aria-label="Predicted versus actual success rate">
             <div class="reliability-row">
-              <span>Mean prediction</span>
+              <span id="effect-primary-label">Mean prediction</span>
               <div class="bar-track"><span class="bar warning" id="reliability-pred-bar"></span></div>
               <strong id="reliability-pred">--</strong>
             </div>
             <div class="reliability-row">
-              <span>Actual rate</span>
+              <span id="effect-secondary-label">Actual rate</span>
               <div class="bar-track"><span class="bar danger" id="reliability-actual-bar"></span></div>
               <strong id="reliability-actual">--</strong>
             </div>
           </div>
           <dl class="mini-stats">
-            <div><dt>Bucket</dt><dd id="reliability-bucket">--</dd></div>
-            <div><dt>Samples</dt><dd id="reliability-samples">--</dd></div>
-            <div><dt>Agent Brier</dt><dd id="agent-brier">--</dd></div>
+            <div><dt id="effect-stat-one-label">Bucket</dt><dd id="reliability-bucket">--</dd></div>
+            <div><dt id="effect-stat-two-label">Samples</dt><dd id="reliability-samples">--</dd></div>
+            <div><dt id="effect-stat-three-label">Agent Brier</dt><dd id="agent-brier">--</dd></div>
           </dl>
           <p class="diagnostic-note" id="reliability-note">Reliability data unavailable.</p>
         </article>
@@ -281,6 +281,8 @@
         <a href="../artifacts/drift-report.json">Drift report <span aria-hidden="true">&rarr;</span></a>
         <a href="../artifacts/decision.md">Decision <span aria-hidden="true">&rarr;</span></a>
         <a href="../artifacts/demo-ledger.jsonl">Evidence ledger <span aria-hidden="true">&rarr;</span></a>
+        <a id="comparison-ledger-link" href="../artifacts/comparison-ledger.jsonl" hidden>Comparison ledger <span aria-hidden="true">&rarr;</span></a>
+        <a id="control-outputs-link" href="../artifacts/control-outputs.jsonl" hidden>Control outputs <span aria-hidden="true">&rarr;</span></a>
         <a href="../artifacts/proposal-log.jsonl">Proposal log <span aria-hidden="true">&rarr;</span></a>
         <a href="../artifacts/dashboard-data.js">Dashboard data <span aria-hidden="true">&rarr;</span></a>
       </nav>

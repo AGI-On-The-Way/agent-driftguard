@@ -1,0 +1,22 @@
+{
+  "id": "generic-agent-evidence-gate-v1",
+  "source": "domain-neutral real-increment fixture",
+  "description": "Require structured evidence and deterministic checks before accepting durable agent changes.",
+  "metric": "agent_task_hit_rate",
+  "baseline": 0.5,
+  "predicted_delta": 0.25,
+  "change": {
+    "prompt_rubric": "answer with machine-checkable fields and required methods before marking a task complete",
+    "tool_policy": {
+      "prefer_structured_outputs": true,
+      "require_confidence_for_routing": true
+    }
+  },
+  "previous_config": {
+    "prompt_rubric": "answer in free text when it looks plausible",
+    "tool_policy": {
+      "prefer_structured_outputs": false,
+      "require_confidence_for_routing": false
+    }
+  }
+}

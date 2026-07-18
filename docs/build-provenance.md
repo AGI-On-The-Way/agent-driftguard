@@ -25,6 +25,72 @@ not claimed as Build Week output.
 - Tamper-detection, chronology, rollback, keep, and clean-run verification.
 - README, Devpost copy, video script, and submission checklist.
 
+## Added After the Build Week Submission
+
+- Generic rollout evaluator under `src/feedback_kit/rollout.py`.
+- Real-data CLI entry point under `scripts/run_rollout.py`.
+- Evalset verifier under `src/feedback_kit/evalset.py` and
+  `scripts/verify_outputs.py`, so real agent outputs can be judged by machine
+  checks instead of hand-written `actual_pass` rows.
+- Configurable sample gate for real rollout decisions, so small apparent lifts
+  pause for more evidence instead of becoming durable improvements.
+- Domain-neutral real increment protocol under
+  `docs/real-increment-protocol.md`.
+- Generic rollout and evalset tests covering rollback, keep, CLI execution,
+  chronology, verifier-generated outcome rows, and refusal to overwrite
+  existing evidence.
+- Authoritative `ExperimentRunner` lifecycle that owns baseline execution,
+  manifest locking, config apply, candidate execution, and final policy action.
+- `CommandAgentRunner` JSON process contract and durable JSON config adapter,
+  including apply/keep/restore receipts and fail-safe restoration after
+  candidate or partial-apply failures.
+- Exact paired binary lift gate with fixed task pairing, default `n >= 20`,
+  minimum lift, critical-task regression blocking, and deterministic paired
+  bootstrap interval.
+- Post-lock frozen-control/candidate confirmation with a manifest-derived,
+  per-task balanced execution order; the effect gate no longer relies on the
+  earlier hypothesis-forming baseline as its statistical control.
+- A third hash-chained experiment log that proves ordering independently of the
+  outcome ledger and proposal log.
+- An independent comparison ledger for scheduled control/candidate verdicts,
+  keeping paired-effect evidence separate from the health/calibration ledger.
+- One-command external-process judge fixture and self-contained per-experiment
+  dashboard showing `8/20 -> 20/20`, `+60 pp`, and `p=0.000244`.
+- Optional `gpt-5.6-sol` OpenAI Responses process adapter and offline request
+  contract tests. No live GPT-5.6 lift is claimed because the local environment
+  did not have `OPENAI_API_KEY` configured.
+- Anthropic-compatible Messages process adapter with offline leakage/contract
+  tests and a captured 66-call `deepseek-v4-flash` experiment. The synthetic
+  contract evalset measured `8/20 -> 20/20`, `+60 pp`, exact `p=0.000244`, and
+  valid independent health, comparison, proposal, and experiment chains.
+- Optional independent holdout confirmation: disjoint development/confirmation
+  task IDs, both evalset hashes in the locked manifest, holdout-only paired
+  effect and health scopes, and fail-closed overlap rejection.
+- A first-pass 98-call `deepseek-v4-flash` holdout run using a plausible generic
+  baseline rather than a known-wrong policy. On 32 measured holdout pairs it
+  records `0/32 -> 30/32`, `+93.75 pp`, 30 improvements, zero regressions,
+  exact `p=9.313e-10`, and two retained candidate errors.
+- Artifact QA exposed that the first holdout's control prompt did not define
+  the ping anchor. The run was retained rather than replaced. A fresh
+  replication holdout fixed only the shared anchor contract and preserved the
+  measured-task candidate policy and config hash.
+- The 98-call replication records `0/32 -> 29/32`, `+90.62 pp`, 29
+  improvements, zero regressions, exact `p=1.863e-09`, a `+78.12 pp` to
+  `+100 pp` interval, three retained candidate errors, and 8/8 stable
+  control/candidate anchor verdicts.
+- Responsive browser verification of the authoritative result viewer at
+  desktop and 390 px widths, including overflow and console-error checks.
+- Separate development and paired-confirmation sample thresholds, so a smaller
+  private development cohort cannot silently weaken the final effect gate.
+- Standard-library private DOCX plus human-label benchmark builder with opaque
+  task IDs, duplicate-source rejection, and chronological cohort support.
+- Whitelist-only sealed evidence export that excludes source text, labels,
+  prompts, task outputs, notes, schedules, private paths, and credentials.
+- A 41-call representative Analyst Guide v8 holdout using completed human
+  decisions. The candidate moves `2/12 -> 5/12` with zero regressions but fails
+  confidence (`p=0.125`), causing a recorded baseline restore rather than an
+  inflated improvement claim.
+
 ## Codex Collaboration
 
 Codex helped inspect the existing system, translate the judging criteria into

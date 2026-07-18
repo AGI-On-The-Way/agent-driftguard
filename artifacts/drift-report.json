@@ -90,14 +90,14 @@
       "algorithm": "sha256",
       "error": null,
       "events_verified": 32,
-      "head": "2ce543018b56bac3ba6fb62a2b7281ead501730fe74dc1f2ce703d4a0178e674",
+      "head": "1af3691eaee0fe3418549613a49c98fc1bf5876aa9c771c1ddc866a54f030ae6",
       "valid": true
     },
     "proposal_log": {
       "algorithm": "sha256",
       "error": null,
       "events_verified": 3,
-      "head": "106a6399259dd85c538d1d97d5e24d964b1952c5b420b0c996d66a5c48a0f17d",
+      "head": "cc601295df04824b51516e03cd86bc25a10196fbe53db9db4e227a4c12a34d41",
       "valid": true
     }
   },

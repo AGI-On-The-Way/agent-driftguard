@@ -1,0 +1,5 @@
+{"task_id":"route-billing","kind":"agent_task","check":{"type":"json_path_equals","path":"route","value":"billing"},"miss_reason":"wrong_route","note":"support triage route must be billing"}
+{"task_id":"extract-invoice","kind":"agent_task","check":{"type":"json_path_equals","path":"invoice_id","value":"INV-1042"},"miss_reason":"bad_extraction","note":"structured extraction must preserve invoice id"}
+{"task_id":"code-json","kind":"agent_task","check":{"type":"contains","value":"json.loads"},"miss_reason":"missing_required_method","note":"coding helper answer should use the standard JSON parser"}
+{"task_id":"risk-score","kind":"agent_task","check":{"type":"number_range","path":"confidence","min":0.7,"max":1.0},"miss_reason":"confidence_out_of_range","note":"routing decision must carry usable confidence"}
+{"task_id":"canary-ping","kind":"anchor_task","check":{"type":"equals","value":"pong"},"miss_reason":"anchor_failed","note":"stable deterministic canary"}
