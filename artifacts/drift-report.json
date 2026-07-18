@@ -1,0 +1,175 @@
+{
+  "artifacts": {
+    "dashboard_data": "artifacts/dashboard-data.js",
+    "decision": "artifacts/decision.md",
+    "ledger": "artifacts/demo-ledger.jsonl",
+    "proposal_log": "artifacts/proposal-log.jsonl",
+    "report": "artifacts/drift-report.json"
+  },
+  "decision": {
+    "action": "rollback_and_pause_lessons",
+    "reasons": [
+      "locked prediction failed: expected +0.15, actual -0.75",
+      "health sensor recommends rollback",
+      "drift sensor recommends pause_lesson_injection",
+      "lesson gate produced no lesson because sample/confidence threshold was not met"
+    ],
+    "restored_config": {
+      "lesson_gate": {
+        "machine_verifiable_only": false,
+        "min_confidence": 0.5,
+        "min_samples": 3
+      },
+      "prompt_rubric": "accept reviewer feedback when it looks plausible"
+    }
+  },
+  "drift": {
+    "anchor_brier": 0.01,
+    "detail": "Overall Brier 0.2042 is 0.194 worse than the anchor (0.01), above the 0.05 tolerance; the learned-feedback channel may be decaying",
+    "gap": 0.1942,
+    "overall_brier": 0.2042,
+    "recommend": "pause_lesson_injection",
+    "status": "llm_judgment_may_be_decaying"
+  },
+  "experiment": {
+    "baseline_run_ids": [
+      "anchor-001",
+      "anchor-002",
+      "anchor-003",
+      "anchor-004",
+      "agent-001",
+      "agent-002",
+      "agent-003",
+      "agent-004"
+    ],
+    "candidate_run_ids": [
+      "anchor-005",
+      "anchor-006",
+      "anchor-007",
+      "anchor-008",
+      "agent-005",
+      "agent-006",
+      "agent-007",
+      "agent-008"
+    ],
+    "order": [
+      "baseline",
+      "proposal_locked",
+      "candidate",
+      "verification"
+    ],
+    "scenario": "rollback"
+  },
+  "health": {
+    "healthy": false,
+    "recommend_rollback": true,
+    "signals": [
+      {
+        "degraded": true,
+        "delta": -0.75,
+        "name": "hit_rate",
+        "prior": 0.75,
+        "recent": 0.0
+      },
+      {
+        "degraded": true,
+        "delta": 0.42,
+        "name": "brier",
+        "prior": 0.188,
+        "recent": 0.608
+      },
+      {
+        "degraded": false,
+        "name": "pending_ratio",
+        "value": 0.0
+      }
+    ]
+  },
+  "integrity": {
+    "ledger": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 32,
+      "head": "24d7490aedfe99bb7a47183979a45e31ed5800d8b8ab445d390ca7eeba9dc0b0",
+      "valid": true
+    },
+    "proposal_log": {
+      "algorithm": "sha256",
+      "error": null,
+      "events_verified": 3,
+      "head": "b872f20b4d64dd720ac4ef6e8b6a4e91bb8fef964053f456a04b4281ce4dbdf9",
+      "valid": true
+    }
+  },
+  "lessons": {
+    "distilled": [],
+    "gate": "blocked_below_min_samples_or_confidence",
+    "minimum_confidence": 0.6,
+    "minimum_samples": 8
+  },
+  "metrics": {
+    "agent_brier": {
+      "brier": 0.3984,
+      "brier_skill": -0.5936,
+      "n": 8
+    },
+    "agent_hit_rate": {
+      "hit_rate": 0.375,
+      "hits": 3,
+      "miss_attribution": {
+        "baseline_task_failure": 1,
+        "rubric_overfit": 4
+      },
+      "n": 8
+    },
+    "agent_reliability": [
+      {
+        "actual_rate": 0.375,
+        "bucket": "[0.6,0.8)",
+        "mean_pred": 0.75,
+        "n": 8
+      }
+    ],
+    "anchor_brier": {
+      "brier": 0.01,
+      "brier_skill": 0.96,
+      "n": 8
+    },
+    "baseline_hit_rate": {
+      "hit_rate": 0.75,
+      "hits": 3,
+      "n": 4
+    },
+    "candidate_hit_rate": {
+      "hit_rate": 0.0,
+      "hits": 0,
+      "n": 4
+    },
+    "overall_brier": {
+      "brier": 0.2042,
+      "brier_skill": 0.1832,
+      "n": 16
+    }
+  },
+  "proposal_verification": {
+    "actual_delta": -0.75,
+    "baseline": 0.75,
+    "current_value": 0.0,
+    "predicted_delta": 0.15,
+    "prev_config": {
+      "lesson_gate": {
+        "machine_verifiable_only": false,
+        "min_confidence": 0.5,
+        "min_samples": 3
+      },
+      "prompt_rubric": "accept reviewer feedback when it looks plausible"
+    },
+    "status": "rolled_back"
+  },
+  "summary": {
+    "decision": "rollback_and_pause_lessons",
+    "records_registered": 16,
+    "records_resolved": 16,
+    "scenario": "rollback"
+  }
+}

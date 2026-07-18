@@ -1,0 +1,16 @@
+{"run_id":"anchor-001","phase":"baseline","kind":"anchor_task","prob":0.9,"machine_verifiable":true,"actual_pass":true,"miss_reason":null,"note":"stable deterministic canary task"}
+{"run_id":"anchor-002","phase":"baseline","kind":"anchor_task","prob":0.9,"machine_verifiable":true,"actual_pass":true,"miss_reason":null,"note":"stable deterministic canary task"}
+{"run_id":"anchor-003","phase":"baseline","kind":"anchor_task","prob":0.9,"machine_verifiable":true,"actual_pass":true,"miss_reason":null,"note":"stable deterministic canary task"}
+{"run_id":"anchor-004","phase":"baseline","kind":"anchor_task","prob":0.9,"machine_verifiable":true,"actual_pass":true,"miss_reason":null,"note":"stable deterministic canary task"}
+{"run_id":"agent-001","phase":"baseline","kind":"agent_task","prob":0.72,"machine_verifiable":true,"actual_pass":true,"miss_reason":null,"note":"pre-change task passes"}
+{"run_id":"agent-002","phase":"baseline","kind":"agent_task","prob":0.72,"machine_verifiable":true,"actual_pass":true,"miss_reason":null,"note":"pre-change task passes"}
+{"run_id":"agent-003","phase":"baseline","kind":"agent_task","prob":0.72,"machine_verifiable":true,"actual_pass":true,"miss_reason":null,"note":"pre-change task passes"}
+{"run_id":"agent-004","phase":"baseline","kind":"agent_task","prob":0.72,"machine_verifiable":true,"actual_pass":false,"miss_reason":"baseline_task_failure","note":"pre-change task fails, establishing a 0.75 baseline"}
+{"run_id":"anchor-005","phase":"candidate","kind":"anchor_task","prob":0.9,"machine_verifiable":true,"actual_pass":true,"miss_reason":null,"note":"stable deterministic canary task"}
+{"run_id":"anchor-006","phase":"candidate","kind":"anchor_task","prob":0.9,"machine_verifiable":true,"actual_pass":true,"miss_reason":null,"note":"stable deterministic canary task"}
+{"run_id":"anchor-007","phase":"candidate","kind":"anchor_task","prob":0.9,"machine_verifiable":true,"actual_pass":true,"miss_reason":null,"note":"stable deterministic canary task"}
+{"run_id":"anchor-008","phase":"candidate","kind":"anchor_task","prob":0.9,"machine_verifiable":true,"actual_pass":true,"miss_reason":null,"note":"stable deterministic canary task"}
+{"run_id":"agent-005","phase":"candidate","kind":"agent_task","prob":0.9,"machine_verifiable":true,"actual_pass":true,"miss_reason":null,"note":"post-change task passes with verifiable evidence"}
+{"run_id":"agent-006","phase":"candidate","kind":"agent_task","prob":0.9,"machine_verifiable":true,"actual_pass":true,"miss_reason":null,"note":"post-change task passes with verifiable evidence"}
+{"run_id":"agent-007","phase":"candidate","kind":"agent_task","prob":0.9,"machine_verifiable":true,"actual_pass":true,"miss_reason":null,"note":"post-change task passes with verifiable evidence"}
+{"run_id":"agent-008","phase":"candidate","kind":"agent_task","prob":0.9,"machine_verifiable":true,"actual_pass":true,"miss_reason":null,"note":"post-change task passes with verifiable evidence"}

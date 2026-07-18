@@ -1,0 +1,24 @@
+{
+  "id": "codex-rubric-tightening-v1",
+  "source": "synthetic Build Week demo proposal",
+  "description": "Tighten the agent review rubric so the agent only accepts lessons backed by verifiable task outcomes.",
+  "metric": "agent_task_hit_rate",
+  "baseline": 0.75,
+  "predicted_delta": 0.15,
+  "change": {
+    "prompt_rubric": "require concrete test evidence before accepting a self-improvement lesson",
+    "lesson_gate": {
+      "machine_verifiable_only": true,
+      "min_samples": 8,
+      "min_confidence": 0.6
+    }
+  },
+  "previous_config": {
+    "prompt_rubric": "accept reviewer feedback when it looks plausible",
+    "lesson_gate": {
+      "machine_verifiable_only": false,
+      "min_samples": 3,
+      "min_confidence": 0.5
+    }
+  }
+}
