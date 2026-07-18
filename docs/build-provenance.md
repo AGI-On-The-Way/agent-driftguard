@@ -41,10 +41,11 @@ as an independent judge-style adversarial reviewer; its highest-priority
 findings were used to make the repository self-contained and add a positive
 keep path.
 
-## Submission Evidence Still Required
+## Submission Evidence
 
-- Generate `/feedback` from the Codex project task where the majority of the
-  Build Week product layer was built.
-- Enter that Session ID in the Devpost form.
-- Preserve a dated commit history for this workspace before submission.
-- Record the video showing the task/session evidence and the working dashboard.
+- Public demo video: `https://youtu.be/oUA32nraAc8`
+- Public MIT-licensed repository with dated commit history.
+- `/feedback` Session ID entered in the Devpost form.
+- Developer Tools installation and test instructions entered for judges.
+- Submitted to OpenAI Build Week on July 17, 2026:
+  `https://devpost.com/software/agent-driftguard`

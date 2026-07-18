@@ -4,6 +4,8 @@
 
 [Watch the 2:22 demo video](https://youtu.be/oUA32nraAc8)
 
+[View the OpenAI Build Week submission](https://devpost.com/software/agent-driftguard)
+
 **A flight recorder and rollback gate for agent self-improvement.**
 
 Agent DriftGuard prevents an agent from turning weak feedback into permanent
@@ -112,8 +114,8 @@ captured model response. DriftGuard's value is the deterministic boundary
 around model-suggested changes.
 
 See `docs/build-provenance.md` for the explicit pre-Build-Week/new-work split.
-The required `/feedback` Codex Session ID must be taken from the project task
-and entered in the Devpost submission form before the deadline.
+The required `/feedback` Codex Session ID was generated from the main project
+task and entered in the Devpost submission form.
 
 ## Build Week Scope
 
